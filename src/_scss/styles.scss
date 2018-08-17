@@ -1,0 +1,40 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "utilities";
+
+
+body {
+  color: #000000;
+}
+header {
+  padding: 100px 0 50px;
+  background: theme-color("main");
+  color: #fff;
+}
+.section {
+  padding: 30px 0;
+}
+
+// Make a button look and behave like a link
+.btn-link {
+  color: theme-color("action");
+  line-height: 0;
+  @include hover {
+    color: darken(theme-color("action"), 5);
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-decoration;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $btn-link-disabled-color;
+    pointer-events: none;
+  }
+
+  // No need for an active state here
+}
