@@ -40,7 +40,7 @@ module.exports = {
         use: [
           {
             loader: "html-loader",
-            options: { minimize: false }
+            options: { minimize: true }
           }
         ]
       },
@@ -48,11 +48,29 @@ module.exports = {
         test: /\.scss$/,
         use: [
           // fallback to style-loader in development
-          MiniCssExtractPlugin.loader,          
+          MiniCssExtractPlugin.loader,
           { loader: 'css-loader', options: { sourceMap: true } },
           { loader: 'postcss-loader', options: { sourceMap: true } },
           { loader: 'sass-loader', options: { sourceMap: true } }
-      ]
+        ]
+      },
+      {
+        test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$/,
+        loader: 'file-loader',  // <-- retain original file name
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'images/'
+        }
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
       }
     ]
   },
