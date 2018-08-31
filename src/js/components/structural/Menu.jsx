@@ -78,6 +78,11 @@ class Menu extends Component {
                   </NavLink>
                 </NavItem>
                 <NavItem>
+                  <NavLink to="/store" className="nav-link">
+                    {'Storejs'}
+                  </NavLink>
+                </NavItem>
+                <NavItem>
                   <NavLink to="/protected" className="nav-link">
                     {'Protected'}
                   </NavLink>
