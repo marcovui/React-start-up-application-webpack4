@@ -1,9 +1,8 @@
 import sinon from 'sinon';
 import chai from 'chai';
-var assert = chai.assert;
-import myFunction from './example';
-import { setupNewUser, Database } from './example';
+import { myFunction, setupNewUser, Database } from './example';
 
+const assert = chai.assert;
 // https://www.sitepoint.com/sinon-tutorial-javascript-testing-mocks-spies-stubs/
 
 // TO BE USED TO VERIFY A CALLBACK

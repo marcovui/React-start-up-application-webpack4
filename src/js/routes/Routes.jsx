@@ -5,6 +5,7 @@ import Form from '../components/views/redux/Form';
 import Fetch from '../components/views/redux/Fetch';
 import Protected from '../components/views/Protected';
 import Login from '../components/views/Login';
+import Es6Features from '../components/views/Es6Features';
 
 const Routes = [
   {
@@ -39,6 +40,12 @@ const Routes = [
         subTitle: 'sub title',
       },
     ],
+  },
+  {
+    path: '/es6-features',
+    component: Es6Features,
+    title: 'EcmaScript 6 Features',
+    subTitle: '',
   },
   {
     path: '/protected',

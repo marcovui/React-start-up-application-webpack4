@@ -1,12 +1,8 @@
-function myFunction(condition, callback) {
+export function myFunction(condition, callback) {
     if (condition) {
         callback();
     }
 }
-
-export default myFunction;
-
-
 
 export const Database = {
     save: function (user, callback) {

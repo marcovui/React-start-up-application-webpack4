@@ -54,7 +54,7 @@ class Menu extends Component {
     const { isOpen } = this.state;
     return (
       <div>
-        <Navbar dark fixed="top" expand="lg">
+        <Navbar dark fixed="top" expand="lg" className="bg-main">
           <div className="container">
             <NavbarBrand href="/">
               {'reactstrap'}
@@ -65,6 +65,11 @@ class Menu extends Component {
                 <NavItem>
                   <NavLink exact to="/" className="nav-link">
                     {'Home'}
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink to="/es6-features" className="nav-link">
+                    {'EcmaScript 6 Features'}
                   </NavLink>
                 </NavItem>
                 <NavItem>
