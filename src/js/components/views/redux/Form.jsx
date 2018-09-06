@@ -6,9 +6,9 @@ import List from './List';
 import { addArticle, importArticles, importArticlesAxios } from '../../../redux/actions/index';
 
 const mapDispatchToProps = dispatch => ({
-  addArticle: article => dispatch(addArticle(article)),
-  importArticles: () => dispatch(importArticles()),
-  importArticlesAxios: () => dispatch(importArticlesAxios()),
+  addArticleDisp: article => dispatch(addArticle(article)),
+  importArticlesDisp: () => dispatch(importArticles()),
+  importArticlesAxiosDisp: () => dispatch(importArticlesAxios()),
 });
 
 class ConnectedForm extends Component {
@@ -31,7 +31,8 @@ class ConnectedForm extends Component {
     event.preventDefault();
     const { title } = this.state;
     const id = uuidv1();
-    this.props.addArticle({
+    const { addArticleDisp } = this.props;
+    addArticleDisp({
       uid: id,
       id,
       title,
@@ -41,12 +42,14 @@ class ConnectedForm extends Component {
 
   handleLoadArticles(event) {
     event.preventDefault();
-    this.props.importArticles();
+    const { importArticlesDisp } = this.props;
+    importArticlesDisp();
   }
 
   handleLoadArticlesAxios(event) {
     event.preventDefault();
-    this.props.importArticlesAxios();
+    const { importArticlesAxiosDisp } = this.props;
+    importArticlesAxiosDisp();
   }
 
   render() {

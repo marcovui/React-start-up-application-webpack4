@@ -18,7 +18,7 @@ class Storejs extends Component {
     store.set('user', { name: 'Marcus' });
     // Get current user
     const user = store.get('user');
-    console.log(user);
+    // console.log(user);
   }
 
   removeFromStore() {
